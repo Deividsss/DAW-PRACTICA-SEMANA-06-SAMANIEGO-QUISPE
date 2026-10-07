@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+#root > nav {
+  width: 100%;
+  background: #1e293b;
+  color: white;
+  padding: 18px 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+#root > nav h2 {
+  margin-right: auto;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+#root > nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+
+  padding: 10px 14px;
+  border-radius: 8px;
+
+  transition: 0.2s;
+}
+
+#root > nav a:hover {
+  background: #334155;
+  color: white;
+}
+
+#root > nav a.active {
+  background: #2563eb;
+  color: white;
+}
+
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+
+#root > div {
+  width: min(1100px, 90%);
+  margin: 50px auto;
+}
+
+/* =========================
+   TITULOS
+========================= */
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #111827;
+}
+
+h2 {
+  color: #111827;
+}
+
+p {
+  line-height: 1.6;
+  color: #64748b;
+}
+
+/* =========================
+   HOME
+========================= */
+
+#root > div:first-of-type {
+  text-align: center;
+}
+
+#root > div:first-of-type h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+#root > div:first-of-type p {
+  font-size: 18px;
+}
+
+/* =========================
+   LISTA DE USUARIOS
+========================= */
+
+#root > div > div {
+  margin-top: 25px;
+}
+
+/* Tarjetas de usuarios */
+
+#root > div > div > div {
+  background: white;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 16px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#root > div > div > div:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+#root > div > div > div h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1e3a8a;
+}
+
+#root > div > div > div p {
+  margin: 4px 0;
+}
+
+/* =========================
+   FORMULARIO
+========================= */
+
+form {
+  width: min(650px, 100%);
+  margin: 30px auto;
+
+  background: white;
+  padding: 35px;
+
+  border-radius: 16px;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+form > div {
+  margin-bottom: 22px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+
+  font-weight: 600;
+  color: #374151;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  outline: none;
+
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+form .field-guidance,
+form .field-error {
+  margin-top: 7px;
+  font-size: 13px;
+}
+
+form .field-guidance {
+  color: #64748b;
+}
+
+form .field-error {
+  color: #b91c1c;
+}
+
+form input[aria-invalid="true"],
+form textarea[aria-invalid="true"] {
+  border-color: #dc2626;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+  width: 100%;
+
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   MENSAJES
+========================= */
+
+#root > div > p {
+  background: white;
+  padding: 20px;
+
+  border-radius: 10px;
+
+  border: 1px solid #e5e7eb;
+
+  margin-top: 20px;
+}
+
+#root > div > p:first-of-type {
+  color: #475569;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  #root > nav {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  #root > nav h2 {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  #root > nav a {
+    font-size: 14px;
+  }
+
+  #root > div {
+    width: 92%;
+    margin: 35px auto;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  #root > div:first-of-type h1 {
+    font-size: 34px;
+  }
+
+  form {
+    padding: 25px;
+  }
+}
